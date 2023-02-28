@@ -19,3 +19,11 @@ export const getPost = (id: number) => {
 export const createPost = (post: Post) => {
   return prisma.post.create({ data: post });
 };
+
+export const updatePost = (post: Post) => {
+  return prisma.post.update({ where: { id: post.id }, data: post });
+};
+
+export const deletePost = (id: number) => {
+  return prisma.post.delete({ where: { id } });
+};
